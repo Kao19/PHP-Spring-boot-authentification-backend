@@ -10,7 +10,7 @@ public interface UserService {
 	
 	User saveUser(User user);
 	User getUser(Long id);
-	public Long getUserCount();
+	public Long findMaxID();
 	List<User> getAllUsers();
 	boolean existsUser(Long id);
 }

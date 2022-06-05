@@ -189,8 +189,8 @@ public class ProduitController {
 	@RequestMapping("/login")
     public RedirectView login(@ModelAttribute("user") User user, HttpServletRequest request)
     {
-		Long count = userService.getUserCount();
-		for(int i=1; i<=count ; i++) {
+		Long count = userService.findMaxID();
+		for(int i=1; i<=15 ; i++) {
 			if(!userService.existsUser((long) i)) continue;
 			if( (user.getUserName().equals(userService.getUser((long) i).getUserName())) && (user.getPassWord().equals(userService.getUser((long) i).getPassWord())))
 				return new RedirectView("http://localhost/sb1/loginSuccess.php?userName="+user.getUserName());

@@ -19,10 +19,6 @@ public class UserServiceImplementation implements UserService{
 		return userRepository.getById(id);
 	}
 
-	@Override
-	public Long getUserCount() {
-	    return userRepository.count();
-	}
 
 	@Override
 	public List<User> getAllUsers() {
@@ -36,8 +32,14 @@ public class UserServiceImplementation implements UserService{
 
 	@Override
 	public boolean existsUser(Long id) {
-		// TODO Auto-generated method stub
 		return userRepository.existsById(id);
+	}
+
+
+	@Override
+	public Long findMaxID() {
+		// TODO Auto-generated method stub
+		return userRepository.findMaxID();
 	}
 
 }
